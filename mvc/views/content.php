@@ -1,6 +1,6 @@
 <ul>
 	<?php foreach($links as $link){ ?>
-		<li><?phpecho $link; ?></li>
+		<li><?php echo $link; ?></li>
 	<?php } ?>
 </ul>
 <div>

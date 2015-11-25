@@ -1,20 +1,11 @@
 <?php
-class Template{
-	private $vars = array();
+require_once('template.php');
+$view = new Template();
 
-	public function __get($name){
-		return $this->vars[$name];
-	}
+$view->title = "hello, world";
+$view->links = array("one", "two", "three");
+$view->body = "Hi, sup lil nigga";
 
-	public function __set($name, $value){
-		this->vars[$name] = $value;
-	}
-
-	public function render($viewTemplateFile){
-		extract($this->vars);
-		ob_start();
-		include($viewTemplateFile);
-		return ob_get_clean();
-	}
-}
+$view->content = $view->render('content.php');
+echo $view->render('main.php');
 ?>
